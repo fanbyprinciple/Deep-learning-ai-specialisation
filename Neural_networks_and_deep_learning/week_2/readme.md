@@ -47,7 +47,22 @@ or `-(ylog(y_pred) + (1-y)log(1-ypred))`
 
 ![](log_cost_function.png)
 
-cost function would be `sum of all losses * 1/m`
+cost function would be `J(w,b) = sum of all losses * 1/m`
+
+### Gradient Descent
+
+Gradient desent means finding the value of w and b such that the cost function is minimum.
+
+`d/d(w,b) (J(w,b)) = d/dw(J(w)) + d/dw(J(b))`
+
+`Repeat {`
+`    w = w - alpha * d/dw(J(w))`
+`}`
+
+
+
+
+
 
 
 
