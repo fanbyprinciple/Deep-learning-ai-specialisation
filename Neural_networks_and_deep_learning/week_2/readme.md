@@ -59,6 +59,22 @@ Gradient desent means finding the value of w and b such that the cost function i
 `    w = w - alpha * d/dw(J(w))`
 `}`
 
+### Intuitive understanding of Calculus
+
+Derivative means that if we nudge value of x by an infinitesimal amount how much would the value of y change. derivative is same for a straight line
+
+### More derivative examples
+
+if f(a) = a^2 => derivative is 2a
+if f(a) = a^3 => derivative is 3a
+if f(a) = log(a) => derivative is 1/a
+
+### Computational graph
+
+![](computational_graph.png)
+
+It is about trying to find how much the final value is affected if you change the intermediate values.
+
 
 
 
