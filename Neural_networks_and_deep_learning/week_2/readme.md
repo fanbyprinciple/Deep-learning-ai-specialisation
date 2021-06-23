@@ -43,7 +43,9 @@ we need y pred to match the actual targets,
 
 `loss = 1/2 * (ypred - y)^2`
 
-or `-(ylog(y_pred) + (1-y)log(1-ypred))`
+or 
+
+`loss = -(ylog(y_pred) + (1-y)log(1-ypred))`
 
 ![](log_cost_function.png)
 
@@ -74,6 +76,36 @@ if f(a) = log(a) => derivative is 1/a
 ![](computational_graph.png)
 
 It is about trying to find how much the final value is affected if you change the intermediate values.
+
+### Gradient descent for logistic regression
+
+```python
+z = w.T * x + b
+y_pred = a = sigmoid(z)
+
+L(a,y) = -(ylog(a)+ (1-y)log(1-a))
+```
+It is translated,
+
+if given two features x1 and x2, with w1 and w2 respectively as weights and b as bias then,
+```python
+z = w1.T * x1 + w2.T * x2 + b
+
+y_pred = sigmoid(z)= 1/ 1+ (e ^ z) = 1/ (1 + (e ^ (w1.T * x1 + w2.T * x2 + b)))
+```
+then the cost function would be ,
+
+``` python
+L(a,y) = -(y * log(1/ (1 + (e ^ (w1.T * x1 + w2.T * x2 + b))))) + (1-y)log(1 -(1/ (1 + (e ^ (w1.T * x1 + w2.T * x2 + b)))) )
+```
+
+![](gradient_descent_for_logistic_regression.png)
+
+
+
+
+
+
 
 
 
