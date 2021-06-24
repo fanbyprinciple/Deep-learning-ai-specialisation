@@ -135,6 +135,58 @@ z = np.dot(w,x).tb
 Massive time difference:
 ![](massive_time_difference.png)
 
+### More vectorisation examples
+
+1. Example 1
+
+```python
+
+u = A*v
+
+ui = Sum (Aij * Vj)
+
+u[i] = A[i][j] + v[j]
+
+# Vectorisation 
+
+u = np.dot(A, v)
+```
+
+2. Example 2
+
+```python
+v = [v1..vn]
+u = [e^v1 .. e^vn]
+
+u = np.zeros((n,1))
+for i in range(n):
+    u[i] = math.exp(v[i])
+
+# Vectorisation 
+
+import numpy as np
+
+u = np.exp(v)
+
+# there are other functions
+
+u = np.exp(v)
+np.log(v)
+np.abs(v)
+np.maximum(v, o)
+v**2
+```
+![](vectorisation.png)
+
+### Clarification of "dz"
+
+dz = a(1-a) == a - y
+
+// note to self go back to the first thing and then try implement the code from week one.
+
+
+
+
 
 
 
