@@ -101,6 +101,42 @@ L(a,y) = -(y * log(1/ (1 + (e ^ (w1.T * x1 + w2.T * x2 + b))))) + (1-y)log(1 -(1
 
 ![](gradient_descent_for_logistic_regression.png)
 
+### Gradient Descent on m examples
+
+Logistic regression cost formula was really the mean of cost over all examples
+
+so the derivative of cost function w.r.t weights is also the mean of derviative of individual cost functions.
+
+```python
+
+J = 1/m * sum(L(a,y)), where L=-(ylog(a) - (1-y)*log(1-a)) a = sigmoid(z) and z = w.T + b
+
+dJ/dw = 1/m * sum ( d(L(a,y))/dw)
+
+# now
+for i in range(m:)
+    dz = a- y
+    dw1 = x1 * dz
+    # and weight would be updated as
+    w1 = w1 - learning_rate * dw1
+
+```
+
+## Python and vectorization
+
+### Vectorisation
+
+In a non vectorisationworld we would have been using loops
+
+instead we can directly use vector array to perform operations.
+
+z = np.dot(w,x).tb
+
+Massive time difference:
+![](massive_time_difference.png)
+
+
+
 
 
 
